@@ -161,6 +161,7 @@ int main()
 		cout << "=\t\t CSV Solver\t\t=" << endl;
 		cout << "=\t\tby PiotrCiba\t\t=" << endl;
 		cout << "=\t\tberndporr/iir1\t\t=" << endl;
+		cout << "=\t\tMathGL & FLTH\t\t=" <<endl;
 		cout << "=========================================" << endl;
 		string msg = (!v_in.empty()) ? "Wczytany" : "Pusty";
 		cout << "Input file: " << msg << endl;
