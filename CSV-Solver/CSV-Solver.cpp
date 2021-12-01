@@ -10,6 +10,7 @@
 #include <vector>
 #include <cctype>
 #include <iomanip>
+#include <Iir.h>
 
 #ifndef NOMINMAX
 #define NOMINMAX
@@ -268,26 +269,26 @@ int main()
 				}
 			}
 		}
-		/*
-		if (choice == "a" && !v_in.empty()) {
-			cout << "domyślnie:\tFiltr IIR Butterswortha, dolnoprzepustowy" << endl;
-			cout << "Rzad:\t" << N << "\nProbkowanie:\t" << samplerate << "\nPasmo odciecia:\t" << cutoff << endl << endl;
-			Iir::Butterworth::LowPass<N> f;
-			f.setup(samplerate, cutoff);
-			double tmp;
-			cout << "Postep:\t";
-
-			for (size_t i = 0;i < v_in.size();i++) {
-				tmp = f.filter(v_in[i]);
-				v_out.push_back(tmp);
-				cout << ((i % 1000 == 0) ? "." : "");
+		if (choice == "a") {
+			if (v_in.empty()) {
+				cout << "Auto Err: file not loaded" << endl;
 			}
-			cout << endl << "Wykonano";
+			else {
+				cout << "domyślnie:\tFiltr IIR Butterswortha, dolnoprzepustowy" << endl;
+				cout << "Rzad:\t" << N << "\nProbkowanie:\t" << samplerate << "\nPasmo odciecia:\t" << cutoff << endl << endl;
+				Iir::Butterworth::LowPass<N> f;
+				f.setup(samplerate, cutoff);
+				double tmp;
+				cout << "Postep:\t";
+
+				for (size_t i = 0;i < v_in.size();i++) {
+					tmp = f.filter(v_in[i]);
+					v_out.push_back(tmp);
+					cout << ((i % 1000 == 0) ? "." : "");
+				}
+				cout << endl << "Wykonano";
+			}
 		}
-		else if (v_in.empty()) {
-			cout << "Auto Err: Plik nie wczytany";
-		}
-		*/
 		if (choice == "g" && !v_in.empty()) {
 
 		}
