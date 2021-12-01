@@ -21,7 +21,10 @@
 *.smod
 
 # Compiled Static libraries
-#none here, intending to git all of them (at least in this branch)
+*.lai
+*.la
+*.a
+*.lib
 
 # Executables
 *.exe
